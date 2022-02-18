@@ -6,14 +6,13 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 
-const server = app.listen(9527, '0.0.0.0', function () {
+const server = app.listen(9527, '127.0.0.1', function () {
     const address = server.address();
     const host = address.address;
     const port = address.port;
-    console.log("应用实例，访问地址为 https://%s:%s", host, port);
+    console.log("应用实例，访问地址为 http://%s:%s", host, port);
 
 });
-
 
 for (let key in requestApi) {
     request(requestApi[key].api, requestApi[key].path)
@@ -41,3 +40,10 @@ function request(api, path) {
 
     })
 }
+
+
+app.get('/', function (req, res) {
+    res.send('Hello 9527');
+})
+
+
