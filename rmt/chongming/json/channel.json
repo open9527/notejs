@@ -1,0 +1,16 @@
+[
+  {
+    "id": "18f9775b831848b3b57fb1836ff1224e",
+    "contentType": "channel",
+    "title": "要闻",
+    "displayStyle": "content",
+    "children": []
+  },
+  {
+    "id": "3f32881cc9d64a78a3f10bc4482e9f3d",
+    "contentType": "channel",
+    "title": "岛事",
+    "displayStyle": "content",
+    "children": []
+  }
+]
