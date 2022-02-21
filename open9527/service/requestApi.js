@@ -1,5 +1,6 @@
 const express = require('express');
-const requestApi = require('./configs');
+const requestApi = require('../configs');
+
 const app = express();
 
 app.use(express.json())
@@ -20,10 +21,10 @@ for (let key in requestApi) {
 
 
 function request(api, path) {
-    app.post(api,  (req, res) =>{
+    app.post(api, (req, res) => {
         console.log(`body => ` + JSON.stringify(req.body));
 
-        console.log('request api=  ' + api);
+        console.log('request service=  ' + api);
         const param = {"code": 0, "msg": "success"};
 
         const config = require(path);
@@ -45,5 +46,3 @@ function request(api, path) {
 app.get('/', function (req, res) {
     res.send('Hello 9527');
 })
-
-
